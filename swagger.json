@@ -62,7 +62,10 @@
         ],
         "responses": {
           "201": {
-            "description": "job is added"
+            "description": "job is added",
+            "schema": {
+              "$ref": "#/definitions/JobResponse"
+            }
           },
           "400": {
             "description": "unexpected error"

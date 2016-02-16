@@ -18,9 +18,9 @@ exports.postJobs = function(req, res) {
       newJob.notes = req.body.notes;
       newJob.owner = owner._id;
 
-      newJob.save(function(err) {
+      newJob.save(function(err, job) {
         if (err) { throw err; }
-        res.status(201).send({ description: 'job created!' });
+        res.status(201).send({ description: 'job created!', job: job });
       });
     }
   });
